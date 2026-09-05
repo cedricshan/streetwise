@@ -85,15 +85,7 @@
   <div class="wrap">
     <span class="badge">Anonymous code release &middot; under double-blind review</span>
     <h1>StreetWise<span class="dot">.</span></h1>
-    <p class="tag">Knowing <b>what to say</b> and <b>when</b> &mdash; proactive spoken hazard
-    alerts for blind and low-vision pedestrians, from a <b>0.5-billion-parameter</b>
-    vision-language model that runs ahead of the cloud.</p>
-    <div class="stats">
-      <div class="stat"><div class="n">0.5B</div><div class="l">generator parameters</div></div>
-      <div class="stat"><div class="n">20,000</div><div class="l">relabeled training clips</div></div>
-      <div class="stat"><div class="n">2</div><div class="l">tiers: when &amp; what to speak</div></div>
-      <div class="stat"><div class="n">3</div><div class="l">stages: SFT &middot; distill &middot; RL</div></div>
-    </div>
+    
   </div>
 </header>
 
@@ -116,21 +108,43 @@
   <div class="wrap">
     <p class="kicker">Showcase &mdash; model outputs</p>
     <h2>What the 0.5B generator says</h2>
-    <p class="lede">Benchmark clips with the alert the trained 0.5B model produced at the final
-    frame. The fourth clip holds no hazard &mdash; reporting a clear path is the correct answer.</p>
+    
     <div class="grid">
-      <div class="card"><div class="vid"><video src="assets/eb_00677_00460.mp4" muted loop playsinline preload="metadata"></video><span class="chip">bench &middot; stairs</span></div>
-        <div class="body"><div><div class="lab">StreetWise-0.5B</div>
-        <div class="say"><span class="q">&ldquo;</span>Stairs directly ahead&mdash;stop and use the handrail before climbing.<span class="q">&rdquo;</span></div></div></div></div>
-      <div class="card"><div class="vid"><video src="assets/eb_00702_00978.mp4" muted loop playsinline preload="metadata"></video><span class="chip">bench &middot; tactile paving</span></div>
-        <div class="body"><div><div class="lab">StreetWise-0.5B</div>
-        <div class="say"><span class="q">&ldquo;</span>Keep straight on the tactile paving; a parked scooter is along your left edge.<span class="q">&rdquo;</span></div></div></div></div>
-      <div class="card"><div class="vid"><video src="assets/eb_00895_01460.mp4" muted loop playsinline preload="metadata"></video><span class="chip">bench &middot; crosswalk</span></div>
-        <div class="body"><div><div class="lab">StreetWise-0.5B</div>
-        <div class="say"><span class="q">&ldquo;</span>Scooter blocking the crosswalk ahead; stop and let it pass.<span class="q">&rdquo;</span></div></div></div></div>
-      <div class="card"><div class="vid"><video src="assets/eb_00905_00282.mp4" muted loop playsinline preload="metadata"></video><span class="chip">bench &middot; clear corridor</span></div>
-        <div class="body"><div><div class="lab">StreetWise-0.5B</div>
-        <div class="say"><span class="q">&ldquo;</span>Clear corridor ahead; continue straight.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00677_00460.mp4" muted loop playsinline preload="metadata"></video><span class="chip">eb_00677_00460</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Stairs directly ahead—stop and use the handrail before climbing.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00702_00978.mp4" muted loop playsinline preload="metadata"></video><span class="chip">eb_00702_00978</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Keep straight on the tactile paving; a parked scooter is along your left edge.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00895_01460.mp4" muted loop playsinline preload="metadata"></video><span class="chip">eb_00895_01460</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Scooter blocking the crosswalk ahead; stop and let it pass.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wrd_38823.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wrd_38823</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Crowded market walkway ahead—slow down and keep right behind the pedestrians.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00717_00062.mp4" muted loop playsinline preload="metadata"></video><span class="chip">eb_00717_00062</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Road traffic directly ahead—stop and do not step into the street.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wrd_29825.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wrd_29825</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Stairs directly ahead—stop and use the handrail before climbing.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wrd_45685.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wrd_45685</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Crowded pedestrian street ahead; continue straight cautiously and keep to the center.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wrd_34274.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wrd_34274</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Keep left; a signpost stands directly ahead on the sidewalk.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00905_00282.mp4" muted loop playsinline preload="metadata"></video><span class="chip">eb_00905_00282</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Clear corridor ahead; continue straight.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wad_02872.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wad_02872</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Crowded crosswalk ahead; slow down and keep right behind the pedestrians.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wad_09640.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wad_09640</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Escalator edge directly ahead—stop and step down carefully.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00918_01710.mp4" muted loop playsinline preload="metadata"></video><span class="chip">eb_00918_01710</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Keep right; parked scooters and a tree narrow the sidewalk on your left.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00897_00122.mp4" muted loop playsinline preload="metadata"></video><span class="chip">eb_00897_00122</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Keep straight on the sidewalk; the path ahead is clear.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00714_01073.mp4" muted loop playsinline preload="metadata"></video><span class="chip">eb_00714_01073</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Keep straight on the tactile strip; a pole is on your right.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wad_05607.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wad_05607</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Clear corridor ahead; continue straight.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wad_02262.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wad_02262</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Pedestrian directly ahead—slow and keep right.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00760_02703.mp4" muted loop playsinline preload="metadata"></video><span class="chip">eb_00760_02703</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Cardboard boxes and debris block the path ahead; keep left and proceed carefully.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wad_07529.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wad_07529</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Clear path ahead; continue straight.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wrd_19911.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wrd_19911</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Path ahead is clear; continue straight.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00668_00680.mp4" muted loop playsinline preload="metadata"></video><span class="chip">eb_00668_00680</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Keep straight on the tactile strip; a person is approaching on your right.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wad_01351.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wad_01351</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Road traffic ahead—stay on the sidewalk and do not step into the street.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00039_00543.mp4" muted loop playsinline preload="metadata"></video><span class="chip">eb_00039_00543</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Crowded airport walkway ahead—slow down and keep slightly left behind the people in front.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wad_02447.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wad_02447</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Water directly ahead—stop and stay back from the edge.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wad_00072.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wad_00072</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Parked van blocks the narrow alley ahead; keep right and proceed carefully.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wad_08242.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wad_08242</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Crowded pedestrian street ahead; continue straight cautiously and keep to the center.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00895_00422.mp4" muted loop playsinline preload="metadata"></video><span class="chip">eb_00895_00422</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Open plaza ahead; continue straight with caution.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wrd_14169.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wrd_14169</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Open plaza ahead; continue straight with caution.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00891_01395.mp4" muted loop playsinline preload="metadata"></video><span class="chip">eb_00891_01395</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Food cart directly ahead—stop and turn left to avoid it.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wad_00847.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wad_00847</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Keep right; a parked car blocks the left side of the narrow street ahead.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00738_00432.mp4" muted loop playsinline preload="metadata"></video><span class="chip">eb_00738_00432</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Stairs rise directly ahead; stop and use the handrail before climbing.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wrd_78528.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wrd_78528</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Crowded pedestrian street ahead; continue straight cautiously and keep to the center.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00211_00122.mp4" muted loop playsinline preload="metadata"></video><span class="chip">eb_00211_00122</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Parked motorcycle blocks the sidewalk ahead; keep left around it.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00737_00092.mp4" muted loop playsinline preload="metadata"></video><span class="chip">eb_00737_00092</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Path ahead is clear; continue straight.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00739_00032.mp4" muted loop playsinline preload="metadata"></video><span class="chip">eb_00739_00032</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Stairs descend directly ahead; stop and use the handrail before climbing.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wad_00503.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wad_00503</span></div><div class="body"><div><div class="lab">StreetWise-0.5B</div><div class="say"><span class="q">&ldquo;</span>Waterfront edge close; stay right on the canal edge.<span class="q">&rdquo;</span></div></div></div></div>
     </div>
   </div>
 </section>
@@ -139,8 +153,7 @@
   <div class="wrap">
     <p class="kicker">Showcase &mdash; supervision</p>
     <h2>Relabeled supervision: WAD &rarr; StreetWise-20K</h2>
-    <p class="lede">The same clips under the original WAD reminder and our relabeled
-    StreetWise-20K alert &mdash; the supervision the generator is trained on.</p>
+    
     <div class="grid">
       <div class="card"><div class="vid portrait"><video src="assets/wad_06078.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wad</span></div>
         <div class="body"><div class="pair">
@@ -176,18 +189,7 @@
   </div>
 </section>
 
-<section id="code">
-  <div class="wrap">
-    <p class="kicker">Code</p>
-    <h2>What is in this repository</h2>
-    <div class="tree"><span class="d">perception/</span>   <span class="c">detection &middot; metric depth &middot; camera-motion compensation &middot; tracking &middot; motion-to-text</span>
-<span class="d">generator/</span>    <span class="c">prompt &middot; teacher LoRA SFT &middot; sequence-level distillation &middot; inference</span>
-<span class="d">rl/</span>           <span class="c">Dr. GRPO &middot; programmatic five-term reward &middot; K-sampling</span>
-<span class="d">gate/</span>         <span class="c">vision-tower features &middot; GRU scene gate &middot; training &middot; streaming runtime</span>
-<span class="d">data_prep/</span>    <span class="c">cloud relabeling into the JSON alert schema &middot; SFT data build</span></div>
-    <p class="caption">Dataset and benchmark will be released upon publication.</p>
-  </div>
-</section>
+
 
 <footer>
   <div class="wrap">
