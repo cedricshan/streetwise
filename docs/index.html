@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StreetWise</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦯</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Spline+Sans+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ink:#0f1317; --panel:#161c22; --panel2:#1b232b; --line:#2a343f;
+    --text:#e8e4da; --muted:#9aa4ad; --gold:#d9a441; --teal:#5fb0c4;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--ink);color:var(--text);
+       font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;}
+  a{color:var(--teal);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  /* hero */
+  header{padding:88px 0 56px;border-bottom:1px solid var(--line);
+         background:
+           radial-gradient(1100px 420px at 18% -10%, rgba(217,164,65,.13), transparent 60%),
+           radial-gradient(900px 380px at 85% -20%, rgba(95,176,196,.10), transparent 60%);}
+  .badge{display:inline-block;padding:5px 14px;border:1px solid var(--gold);border-radius:999px;
+         color:var(--gold);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase}
+  h1{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:clamp(52px,7.5vw,88px);
+     margin:22px 0 10px;line-height:1.02}
+  h1 .dot{color:var(--gold)}
+  .tag{font-family:"Newsreader",Georgia,serif;font-style:italic;font-size:clamp(19px,2.4vw,25px);
+       color:var(--muted);max-width:56ch;margin:0 0 26px}
+  .tag b{color:var(--text);font-weight:600}
+  .stats{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);border-radius:12px;
+         overflow:hidden;max-width:860px}
+  .stat{flex:1 1 200px;padding:16px 22px;background:var(--panel);border-right:1px solid var(--line)}
+  .stat:last-child{border-right:0}
+  .stat .n{font-family:"Newsreader",Georgia,serif;font-size:30px;color:var(--gold)}
+  .stat .l{font-size:12.5px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+  /* sections */
+  section{padding:64px 0 8px}
+  .kicker{color:var(--gold);font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin:0 0 8px}
+  h2{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:clamp(28px,3.6vw,40px);margin:0 0 10px}
+  .lede{color:var(--muted);max-width:70ch;margin:0 0 30px}
+  /* architecture */
+  .archcard{background:#f6f4ee;border-radius:14px;padding:26px;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+  .archcard img{width:100%;display:block}
+  .caption{color:var(--muted);font-size:14px;margin-top:14px}
+  .caption b{color:var(--text)}
+  /* video grids */
+  .grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));margin-bottom:26px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+        display:flex;flex-direction:column;transition:transform .25s ease,border-color .25s ease}
+  .card:hover{transform:translateY(-3px);border-color:#3a4856}
+  .vid{position:relative;background:#000}
+  .vid video{width:100%;height:290px;object-fit:cover;display:block}
+  .vid.portrait video{object-fit:contain}
+  .chip{position:absolute;left:12px;top:12px;background:rgba(15,19,23,.72);backdrop-filter:blur(4px);
+        color:#cfd6dc;font:500 11.5px/1 "Spline Sans Mono",monospace;letter-spacing:.06em;
+        padding:6px 10px;border-radius:7px;border:1px solid rgba(255,255,255,.14)}
+  .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px}
+  .say{font-family:"Newsreader",Georgia,serif;font-size:18.5px;line-height:1.45}
+  .say .q{color:var(--gold)}
+  .lab{font:500 11px/1 "Spline Sans Mono",monospace;letter-spacing:.12em;text-transform:uppercase;
+       color:var(--muted);margin-bottom:3px}
+  .pair{display:flex;flex-direction:column;gap:12px}
+  .pair .was{color:#8d97a1;font-size:14.5px;line-height:1.5}
+  .pair .now{font-family:"Newsreader",Georgia,serif;font-size:17px;line-height:1.45}
+  .pair .now .q{color:var(--teal)}
+  /* code layout */
+  .tree{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 30px;
+        font:14px/1.9 "Spline Sans Mono",monospace;overflow-x:auto}
+  .tree .d{color:var(--gold);font-weight:500}
+  .tree .c{color:var(--muted)}
+  .tree a{color:var(--teal)}
+  footer{margin-top:70px;padding:34px 0 46px;border-top:1px solid var(--line);
+         color:var(--muted);font-size:14px}
+  footer .mono{font-family:"Spline Sans Mono",monospace;font-size:13px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="badge">Anonymous code release &middot; under double-blind review</span>
+    <h1>StreetWise<span class="dot">.</span></h1>
+    <p class="tag">Knowing <b>what to say</b> and <b>when</b> &mdash; proactive spoken hazard
+    alerts for blind and low-vision pedestrians, from a <b>0.5-billion-parameter</b>
+    vision-language model that runs ahead of the cloud.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">0.5B</div><div class="l">generator parameters</div></div>
+      <div class="stat"><div class="n">20,000</div><div class="l">relabeled training clips</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">tiers: when &amp; what to speak</div></div>
+      <div class="stat"><div class="n">3</div><div class="l">stages: SFT &middot; distill &middot; RL</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="architecture">
+  <div class="wrap">
+    <p class="kicker">Architecture</p>
+    <h2>Two tiers: when to speak, what to say</h2>
+    <p class="lede">A perception front-end turns egocentric video into short object and motion
+    lines; the 0.5B generator writes the alert from the marked current frame and that text.
+    Above them, an utterance gate watches visual features and perception statistics and decides
+    when speaking is worth it.</p>
+    <div class="archcard"><img src="assets/architecture.png" alt="StreetWise architecture: a control tier with the utterance gate over a data tier with the perception front-end, motion-to-text lines, the 0.5B VLM and the spoken alert"></div>
+    <p class="caption"><b>Tier 1</b> fires or stays silent; <b>Tier 2</b> composes the sentence.
+    The generator sees nine keyframes of the last ~3 seconds, the marked current frame, and the
+    serialized object and motion lines.</p>
+  </div>
+</section>
+
+<section id="model">
+  <div class="wrap">
+    <p class="kicker">Showcase &mdash; model outputs</p>
+    <h2>What the 0.5B generator says</h2>
+    <p class="lede">Benchmark clips with the alert the trained 0.5B model produced at the final
+    frame. The fourth clip holds no hazard &mdash; reporting a clear path is the correct answer.</p>
+    <div class="grid">
+      <div class="card"><div class="vid"><video src="assets/eb_00677_00460.mp4" muted loop playsinline preload="metadata"></video><span class="chip">bench &middot; stairs</span></div>
+        <div class="body"><div><div class="lab">StreetWise-0.5B</div>
+        <div class="say"><span class="q">&ldquo;</span>Stairs directly ahead&mdash;stop and use the handrail before climbing.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00702_00978.mp4" muted loop playsinline preload="metadata"></video><span class="chip">bench &middot; tactile paving</span></div>
+        <div class="body"><div><div class="lab">StreetWise-0.5B</div>
+        <div class="say"><span class="q">&ldquo;</span>Keep straight on the tactile paving; a parked scooter is along your left edge.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00895_01460.mp4" muted loop playsinline preload="metadata"></video><span class="chip">bench &middot; crosswalk</span></div>
+        <div class="body"><div><div class="lab">StreetWise-0.5B</div>
+        <div class="say"><span class="q">&ldquo;</span>Scooter blocking the crosswalk ahead; stop and let it pass.<span class="q">&rdquo;</span></div></div></div></div>
+      <div class="card"><div class="vid"><video src="assets/eb_00905_00282.mp4" muted loop playsinline preload="metadata"></video><span class="chip">bench &middot; clear corridor</span></div>
+        <div class="body"><div><div class="lab">StreetWise-0.5B</div>
+        <div class="say"><span class="q">&ldquo;</span>Clear corridor ahead; continue straight.<span class="q">&rdquo;</span></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="data">
+  <div class="wrap">
+    <p class="kicker">Showcase &mdash; supervision</p>
+    <h2>Relabeled supervision: WAD &rarr; StreetWise-20K</h2>
+    <p class="lede">The same clips under the original WAD reminder and our relabeled
+    StreetWise-20K alert &mdash; the supervision the generator is trained on.</p>
+    <div class="grid">
+      <div class="card"><div class="vid portrait"><video src="assets/wad_06078.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wad</span></div>
+        <div class="body"><div class="pair">
+          <div><div class="lab">WAD</div><div class="was">&ldquo;at 11 o'clock direction there is a tree, beware of it.&rdquo;</div></div>
+          <div><div class="lab">StreetWise-20K</div><div class="now"><span class="q">&ldquo;</span>Follow the paved path as it curves slightly right; low shrubs border the left edge.<span class="q">&rdquo;</span></div></div>
+        </div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wad_01351.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wad</span></div>
+        <div class="body"><div class="pair">
+          <div><div class="lab">WAD</div><div class="was">&ldquo;At 11 o'clock direction, there are still houses being built. At 1 o'clock direction, there is a longitudinally - coming vehicle. Please slow down.&rdquo;</div></div>
+          <div><div class="lab">StreetWise-20K</div><div class="now"><span class="q">&ldquo;</span>Road traffic ahead&mdash;stay on the left sidewalk and do not step into the street.<span class="q">&rdquo;</span></div></div>
+        </div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wad_02447.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wad</span></div>
+        <div class="body"><div class="pair">
+          <div><div class="lab">WAD</div><div class="was">&ldquo;at 11 o'clock direction, there are pedestrians staying. be careful to avoid.&rdquo;</div></div>
+          <div><div class="lab">StreetWise-20K</div><div class="now"><span class="q">&ldquo;</span>Water directly ahead&mdash;turn left and stay on the walkway.<span class="q">&rdquo;</span></div></div>
+        </div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wad_08242.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wad</span></div>
+        <div class="body"><div class="pair">
+          <div><div class="lab">WAD</div><div class="was">&ldquo;there are pedestrians going in the same direction ahead, please move forward in the one o'clock direction.&rdquo;</div></div>
+          <div><div class="lab">StreetWise-20K</div><div class="now"><span class="q">&ldquo;</span>Crowded pedestrian street; continue slowly and keep straight behind the person ahead.<span class="q">&rdquo;</span></div></div>
+        </div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wad_00847.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wad</span></div>
+        <div class="body"><div class="pair">
+          <div><div class="lab">WAD</div><div class="was">&ldquo;There is a telegraph pole at eleven o'clock direction, please pay attention.&rdquo;</div></div>
+          <div><div class="lab">StreetWise-20K</div><div class="now"><span class="q">&ldquo;</span>Keep right&mdash;the parked car and traffic cone block the sidewalk ahead.<span class="q">&rdquo;</span></div></div>
+        </div></div></div>
+      <div class="card"><div class="vid"><video src="assets/wad_00503.mp4" muted loop playsinline preload="metadata"></video><span class="chip">wad</span></div>
+        <div class="body"><div class="pair">
+          <div><div class="lab">WAD</div><div class="was">&ldquo;a pedestrian in the opposite direction ahead&rdquo;</div></div>
+          <div><div class="lab">StreetWise-20K</div><div class="now"><span class="q">&ldquo;</span>Canal edge directly ahead&mdash;stop and keep right along the walkway.<span class="q">&rdquo;</span></div></div>
+        </div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="code">
+  <div class="wrap">
+    <p class="kicker">Code</p>
+    <h2>What is in this repository</h2>
+    <div class="tree"><span class="d">perception/</span>   <span class="c">detection &middot; metric depth &middot; camera-motion compensation &middot; tracking &middot; motion-to-text</span>
+<span class="d">generator/</span>    <span class="c">prompt &middot; teacher LoRA SFT &middot; sequence-level distillation &middot; inference</span>
+<span class="d">rl/</span>           <span class="c">Dr. GRPO &middot; programmatic five-term reward &middot; K-sampling</span>
+<span class="d">gate/</span>         <span class="c">vision-tower features &middot; GRU scene gate &middot; training &middot; streaming runtime</span>
+<span class="d">data_prep/</span>    <span class="c">cloud relabeling into the JSON alert schema &middot; SFT data build</span></div>
+    <p class="caption">Dataset and benchmark will be released upon publication.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="mono">StreetWise &mdash; anonymous release for double-blind review.</div>
+    <div>Clips shown originate from public egocentric walking datasets and are used for research illustration.</div>
+  </div>
+</footer>
+
+<script>
+  const vids = document.querySelectorAll("video");
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    const v = e.target;
+    if (e.isIntersecting) { v.play().catch(() => {}); } else { v.pause(); }
+  }), {threshold: 0.25});
+  vids.forEach(v => io.observe(v));
+</script>
+</body>
+</html>
